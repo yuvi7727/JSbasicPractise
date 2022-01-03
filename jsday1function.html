@@ -6,9 +6,34 @@ Call a JavaScript function
 </Title>  
 <script type = "text/javascript"> 
  
+         var Person = {
+          name:"yuvaraj",
+          surname:"gohil",
+          isTodayTargetCompete:true,  
+          isMoneyCredited:true,
+          getName:function(){
+            alert(this.name+" "+this.surname);    
+          } 	 
+         }   
+
+     
+
+         function printPersonDetails(){
+           yuvaraj = Person;
+           yuvaraj.getName();
+           Harvijay = Person;
+           Harvijay["name"]= "Harvijay";
+           Harvijay.surname="Gohil";
+           Harvijay.getName()
+         }  
+
          function collectorYuvaraj() {  
-            return true;
+             yuvi = Person;
+             yuvi.getName();
+             return yuvi.isTodayTargetCompete;
           }
+
+
          function manager(){
             if(collectorYuvaraj()===false){
                alert("done"); 
@@ -17,13 +42,14 @@ Call a JavaScript function
                alert("pending");  
              }      
          }
-       function arjun()
+       function moneyCreditor_yuvaraj()
 	{
 		return true;
 	}
+
 	function bank_manager()
 	{
-		if(arjun()===true)
+		if(moneyCreditor_yuvaraj()===true)
 		{
 			alert("done");
 		}else
@@ -36,13 +62,20 @@ Call a JavaScript function
 </script>  
 </Head>  
 <Body>   
-<p> IS today work done ? </p>        
+<p>Yuvaraj: IS today work done ? </p>        
       <form>  
          <input type = "button" onclick = "manager()" value = "Message Print">   
       </form>       
       <p>  
-<p> Is Money got credited ? </p>        
+<p>Yuvaraj: Is Money got credited ? </p>        
     <form><input type="button" onclick="bank_manager()" value="check"></form>           
-<p>  
+<p>
+<p>Yuvaraj:Print Person Details </p>        
+    <form><input type="button" onclick="printPersonDetails()" value="printPersonDetails"></form>           
+ 
+<p> Arjun:IS today work done ? </p>        
+<p> Arjun:Is Money got credited ? </p>        
+<p> Arjun: Print Person Details </p>        
+
 </Body>   
 </Html>  
