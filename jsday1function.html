@@ -16,6 +16,17 @@ Call a JavaScript function
           } 	 
          }   
 
+
+
+        var Arjun = {
+          name:"Arjun",
+          surname:"gohil",
+          isTodayTargetCompete:true,  
+          isMoneyCredited:true,
+          getName:function(){
+            alert(this.name+" "+this.surname);    
+          } 	 
+         }   
      
 
          function printPersonDetails(){
@@ -26,6 +37,25 @@ Call a JavaScript function
            Harvijay.surname="Gohil";
            Harvijay.getName()
          }  
+
+
+        function printArjunDetails(){
+           Arjun.getName();
+         }
+
+       function collectorArjun() {  
+             Arjun.getName();
+             return Arjun.isTodayTargetCompete;
+          }  
+
+        function managerForArjun(){
+            if(collectorArjun()===false){
+               alert("done"); 
+             }else
+             {
+               alert("pending");  
+             }      
+         }
 
          function collectorYuvaraj() {  
              yuvi = Person;
@@ -42,12 +72,30 @@ Call a JavaScript function
                alert("pending");  
              }      
          }
+
        function moneyCreditor_yuvaraj()
 	{
 		return true;
 	}
 
-	function bank_manager()
+       function moneyCreditor_Arjun()
+	{
+		return true;
+	}
+
+	function bank_manager_Arjun()
+	{
+		if(moneyCreditor_Arjun()===true)
+		{
+			alert("done");
+		}else
+		{
+			alert("not done");
+		}
+			
+	}
+
+      function bank_manager()
 	{
 		if(moneyCreditor_yuvaraj()===true)
 		{
@@ -69,13 +117,20 @@ Call a JavaScript function
       <p>  
 <p>Yuvaraj: Is Money got credited ? </p>        
     <form><input type="button" onclick="bank_manager()" value="check"></form>           
-<p>
+
 <p>Yuvaraj:Print Person Details </p>        
     <form><input type="button" onclick="printPersonDetails()" value="printPersonDetails"></form>           
  
 <p> Arjun:IS today work done ? </p>        
+      <form>  
+         <input type = "button" onclick = "managerForArjun()" value = "Message Print">   
+      </form>       
+      <p>  
 <p> Arjun:Is Money got credited ? </p>        
+    <form><input type="button" onclick="bank_manager_Arjun()" value="check"></form> 
+          
 <p> Arjun: Print Person Details </p>        
+    <form><input type="button" onclick="printArjunDetails()" value="printPersonDetails"></form>           
 
 </Body>   
 </Html>  
