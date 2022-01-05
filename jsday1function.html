@@ -11,6 +11,13 @@ Call a JavaScript function
           surname:"gohil",
           isTodayTargetCompete:true,  
           isMoneyCredited:true,
+          address:{
+          area:"Kaliyabid",
+          city:"Bhavnagar",
+          getCity:function(){
+            alert(Person.address.city);    
+          } 
+          },
           getName:function(){
             alert(this.name+" "+this.surname);    
           } 	 
@@ -29,9 +36,34 @@ Call a JavaScript function
          }   
      
 
-         function printPersonDetails(){
+
+       function copyObject(){
+          var yuvaraj={};
+          yuvaraj["name"]=Person["name"];
+          yuvaraj.surname = Person["surname"];
+          yuvaraj.getName = Person.getName;
+          yuvaraj.address=Person.address; 
+          yuvaraj["name"]="yuvi";
+          yuvaraj.address.city="Rajkot";
+          Person.getName();  
+          yuvaraj.getName();
+          yuvaraj.address.getCity();  
+          Person.address.getCity();  
+
+        }  
+
+        function copyObjectUsingForLoop(){
+         var yuvaraj={}; 
+        for(p in Person){
+           yuvaraj[p]=Person[p];
+          }
+         yuvaraj.getName();
+        }
+       
+       function printPersonDetails(){
            yuvaraj = Person;
            yuvaraj.getName();
+           yuvaraj.address.getCity()
            Harvijay = Person;
            Harvijay["name"]= "Harvijay";
            Harvijay.surname="Gohil";
@@ -131,6 +163,13 @@ Call a JavaScript function
           
 <p> Arjun: Print Person Details </p>        
     <form><input type="button" onclick="printArjunDetails()" value="printPersonDetails"></form>           
+
+<p> Shallow Copy Object </p>        
+    <form><input type="button" onclick="copyObject()" value="copyObject"></form>           
+
+<p> Copy using for loop </p>        
+    <form><input type="button" onclick="copyObjectUsingForLoop()" value="copyObjectUsingForLoop"></form>           
+
 
 </Body>   
 </Html>  
