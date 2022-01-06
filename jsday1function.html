@@ -60,6 +60,27 @@ Call a JavaScript function
          yuvaraj.getName();
         }
        
+
+        function copyaarjun()
+        {
+            var aarjun={};
+            aarjun.name=Arjun.name;
+            aarjun.surname=Arjun.surname;
+            aarjun.getName=Arjun.getName;
+            Arjun.getName();
+            aarjun.getName();
+        }
+
+	function copyaarjunloop()
+	{
+		var aarjun={};
+		for(i in Arjun)
+		{
+			aarjun[i]=Arjun[i];
+		}
+		aarjun.getName();
+	}
+
        function printPersonDetails(){
            yuvaraj = Person;
            yuvaraj.getName();
@@ -170,8 +191,9 @@ Call a JavaScript function
 <p> Yuvaraj: Copy using for loop </p>        
     <form><input type="button" onclick="copyObjectUsingForLoop()" value="copyObjectUsingForLoop"></form>           
 
-<p> Arjun: Shallow Copy Object </p>        
-<p> Arjun: Copy using for loop </p>        
-
+<p> Arjun: Shallow Copy Object </p>  
+<form><input type="button" onclick="copyaarjun()" value="copyObject"></form>   
+<p> Arjun: Copy using for loop </p> 
+<form><input type="button" onclick="copyaarjunloop()" value="copyObjectloop"></form>     
 </Body>   
 </Html>  
