@@ -15,14 +15,13 @@ Call a JavaScript function
           area:"Kaliyabid",
           city:"Bhavnagar",
           getCity:function(){
-            alert(Person.address.city);    
+            alert(this.city);    
           } 
           },
           getName:function(){
             alert(this.name+" "+this.surname);    
           } 	 
          }   
-
 
 
         var Arjun = {
@@ -36,6 +35,7 @@ Call a JavaScript function
          }   
      
 
+       
 
        function copyObject(){
           var yuvaraj={};
@@ -160,6 +160,38 @@ Call a JavaScript function
 			
 	}
 
+     function checkType(){
+     for(property in Person){
+      if(typeof Person[property] == "object"){
+               alert(property+" is an object"); 
+            }else{
+               alert(property+" not an object"); 
+            }
+       }
+     } 
+
+    function deepCopy(){
+      var yuvaraj={};
+    for(property in Person){
+      if(typeof Person[property] == "object"){
+               var address={};
+               for(p in Person[property]){
+                 address[p]=Person[property][p];
+               }
+
+               yuvaraj[property]=address;
+               yuvaraj.address.city="rajkot";
+               yuvaraj.address.getCity();
+               Person.address.getCity();
+            }else{
+               yuvaraj[property]=Person[property]; 
+            }
+       }
+      yuvaraj.getName();
+      
+
+    }
+
 </script>  
 </Head>  
 <Body>   
@@ -195,5 +227,16 @@ Call a JavaScript function
 <form><input type="button" onclick="copyaarjun()" value="copyObject"></form>   
 <p> Arjun: Copy using for loop </p> 
 <form><input type="button" onclick="copyaarjunloop()" value="copyObjectloop"></form>     
+
+<p> yuvaraj: find objects </p>
+<form><input type="button" onclick="checkType()" value="checkType"></form>   
+
+<p> yuvaraj: deep copy objects </p>
+<form><input type="button" onclick="deepCopy()" value="deepCopy"></form>   
+
+<p> Arjun: find objects </p>
+<p> Arjun: deep copy objects </p>
+
+
 </Body>   
 </Html>  
