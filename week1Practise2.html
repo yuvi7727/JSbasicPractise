@@ -1,0 +1,53 @@
+<!Doctype Html>  
+<Html>     
+<Head>      
+<Title>     
+Call a JavaScript function  
+</Title>  
+<script type = "text/javascript"> 
+
+   var Account = {
+     status:1000,
+     alertStatus:function(){
+       alert(Account.status)
+      },
+     isActive:false
+   }
+
+   /*credit */
+   /*debit*/
+ 
+
+   function ActivateOrInactivateUser(input)
+   {   
+    alert(Account.isActive);
+    Account.isActive=input;
+    alert(Account.isActive);      
+   }
+
+</script>  
+</Head>  
+<Body> 
+<p>
+  Activate user
+<input type="button" value="ActivateUser" onClick="ActivateOrInactivateUser('true')">
+</p>
+<p>
+  Inactive user
+</p>
+<p>
+ credit 1000 and alert status (2k)
+</p>
+<p>
+ credit 2000 and alert status (3k)
+</p>
+<p>
+ debit 1000 and alert status (2k)
+</p>
+<p>
+ credit 1000 and alert status (3k)
+</p>
+
+
+</Body>   
+</Html>  
