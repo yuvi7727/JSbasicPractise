@@ -1,0 +1,67 @@
+<!Doctype Html>  
+<Html>     
+<Head>      
+<Title>     
+Call a JavaScript function  
+</Title>  
+<script type = "text/javascript"> 
+  var users = new Array('Yuvaraj',1,'Amit');
+  var groups = ['user','admin','manager','bank_manager'];
+   
+  var Yuvaraj={
+   name:"yuvaraj"
+  } 
+
+  var Arjun={
+   name:"Arjun"
+  } 
+
+  var Amit={
+   name:"Amit"
+  } 
+
+  var userObjects = new Array(Yuvaraj,Arjun,Amit);
+ 
+  function readUsers(){
+    alert(users);
+  }
+
+  function readGroups(){
+    alert(groups);
+  }
+ 
+  function readParticularUser(){
+     alert(users[1]);
+  }
+
+  function readUserObjects(){
+    alert(userObjects);
+    alert(userObjects[0].name+" "+userObjects[1].name+" "+userObjects[2].name);
+   for(i=0;i<3;i++){
+       alert(userObjects[i].name);
+     }
+  }
+ 
+</script>  
+<p> Read Users </p>  
+<input type="button" onclick="readUsers()" value="readUsers">
+
+<p> Read Groups </p>  
+<input type="button" onclick="readGroups()" value="readGroups">
+
+<p> readParticularUser </p>  
+<input type="button" onclick="readParticularUser()" value="readParticularUser">
+
+<p> readUserObjects </p>  
+<input type="button" onclick="readUserObjects()" value="readUserObjects">
+
+
+</Head>  
+
+<Body>   
+ 
+ 
+     
+</Body>   
+</Html>  
+
